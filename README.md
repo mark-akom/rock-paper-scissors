@@ -1,0 +1,1 @@
+This program a simple Rock, Paper and Scissors game written in JavaScript a new skill I just learnt. The game won't have any graphical user interface but will fixed later on.
