@@ -27,7 +27,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if (playerSelection === 'rock') {
-        if(computerSelection === 'scissors') {
+        if(computerSelection === 'scissors') { // computer selection will either be scissors or paper
             message = 'You win, Rock beats Scissors';
             playerScore += 1;
         } else {
@@ -35,7 +35,7 @@ function playRound(playerSelection, computerSelection) {
             computerScore += 1;
         }
         return message;
-    } else if (playerSelection === 'paper') {
+    } else if (playerSelection === 'paper') { // computer selection will either be rock or scissors
         if (computerSelection === 'rock') {
             message = 'You win, Paper beats Rock';
             playerScore += 1;
@@ -44,8 +44,8 @@ function playRound(playerSelection, computerSelection) {
             computerScore += 1;
         }
         return message;
-    } else {
-        if(computerSelection === 'paper') {
+    } else { // user selection is scissors
+        if(computerSelection === 'paper') { // computer selection wil either be paper or rock
             message = 'You win, Scissors beats Paper';
             playerScore += 1;
         } else {
@@ -56,6 +56,16 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
+function findWinner() {
+    if (playerScore > computerScore) {
+        console.log(`Player wins the game. Score: ${playerScore} : ${computerScore}`)
+    } else if (computerScore > playerScore) {
+        console.log(`Computer wins the game. Score: ${computerScore} : ${playerScore}`)
+    } else {
+        console.log(`This game was a draw. Score: ${playerScore} : ${computerScore}`);
+    }
+}
+
 
 function game() {
     alert('Hi, there let\'s play rock paper scissors game')
@@ -63,17 +73,10 @@ function game() {
     for (let i = 1; i <= 5; i++) {
         let playerSelection = prompt('What is your selection?');
         let computerSelection = computerPlay();
-        console.log(computerSelection);
         console.log(playRound(playerSelection, computerSelection));
     }
-
-    if (playerScore > computerScore) {
-        console.log('Player wins the game')
-    } else if (computerScore > playerScore) {
-        console.log('Computer wins the game');
-    } else {
-        console.log('This game was a draw');
-    }
+    
+    findWinner();
 }
 
 game();
