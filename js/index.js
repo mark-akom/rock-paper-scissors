@@ -68,15 +68,8 @@ function findWinner() {
 
 
 function game() {
-    alert('Hi, there let\'s play rock paper scissors game')
-
-    for (let i = 1; i <= 5; i++) {
-        let playerSelection = prompt('What is your selection?');
-        let computerSelection = computerPlay();
-        console.log(playRound(playerSelection, computerSelection));
-    }
+    
     
     findWinner();
 }
 
-game();
